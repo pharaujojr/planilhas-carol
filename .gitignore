@@ -1,0 +1,14 @@
+# Ignore the two local spreadsheets (kept out of repo)
+partida.xls
+final.xlsx
+
+# Gradle
+.gradle/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# temp files
+*~

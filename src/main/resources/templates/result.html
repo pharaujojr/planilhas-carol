@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Resultado da Comparação</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div class="container">
+  <div class="topbar">
+    <h1>Resultado da Comparação</h1>
+    <a class="back-btn" th:href="@{/}"><button type="button" class="secondary">Voltar</button></a>
+  </div>
+
+  <h2>Notas presentes em Sefaz e ausentes no Sistema</h2>
+  <div class="muted" th:if="${onlyInSefaz.size()} == 0">Nenhuma diferença encontrada nesta lista.</div>
+  <table th:if="${onlyInSefaz.size()} > 0">
+      <tr><th>Row</th><th>Original (sefaz)</th><th>Normalized</th></tr>
+      <tr th:each="n : ${onlyInSefaz}">
+          <td th:text="${n.rowNumber}"></td>
+          <td th:text="${n.original}"></td>
+          <td th:text="${n.normalized}"></td>
+      </tr>
+  </table>
+
+  <h2>Notas presentes no Sistema e ausentes em Sefaz</h2>
+  <div class="muted" th:if="${onlyInSistema.size()} == 0">Nenhuma diferença encontrada nesta lista.</div>
+  <table th:if="${onlyInSistema.size()} > 0">
+      <tr><th>Row</th><th>Original (sistema)</th><th>Normalized</th></tr>
+      <tr th:each="n : ${onlyInSistema}">
+          <td th:text="${n.rowNumber}"></td>
+          <td th:text="${n.original}"></td>
+          <td th:text="${n.normalized}"></td>
+      </tr>
+  </table>
+
+</div>
+
+</body>
+</html>
