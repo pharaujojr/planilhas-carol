@@ -6,5 +6,5 @@ RUN chmod +x ./gradlew && ./gradlew bootJar --no-daemon
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=builder /workspace/build/libs/*.jar app.jar
-EXPOSE 8989
+EXPOSE 4679
 ENTRYPOINT ["java","-jar","/app/app.jar"]

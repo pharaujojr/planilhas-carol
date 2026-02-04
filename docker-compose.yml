@@ -2,5 +2,5 @@ services:
   nota-compare:
     build: .
     ports:
-      - "8989:8989"
+      - "4679:4679"
     restart: unless-stopped

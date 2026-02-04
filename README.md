@@ -14,7 +14,7 @@ cd /home/paulo/PROJETOS/CAROL_ANALISE
 ./gradlew bootRun
 ```
 
-Abra http://localhost:8989 e faça upload das duas planilhas.
+Abra http://localhost:4679 e faça upload das duas planilhas.
 
 Rodando com Docker Compose:
 
@@ -23,4 +23,4 @@ cd /home/paulo/PROJETOS/CAROL_ANALISE
 docker compose up --build
 ```
 
-O serviço ficará disponível em http://localhost:8989
+O serviço ficará disponível em http://localhost:4679
