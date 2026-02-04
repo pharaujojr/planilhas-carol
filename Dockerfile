@@ -1,7 +1,7 @@
-FROM gradle:8.6.3-jdk21 AS builder
-WORKDIR /home/gradle/project
-COPY --chown=gradle:gradle . .
-RUN gradle bootJar --no-daemon
+FROM eclipse-temurin:21-jdk AS builder
+WORKDIR /workspace
+COPY . .
+RUN chmod +x ./gradlew && ./gradlew bootJar --no-daemon
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app

@@ -1,9 +1,6 @@
-version: '3.8'
 services:
   nota-compare:
     build: .
     ports:
       - "8989:8989"
     restart: unless-stopped
-    volumes:
-      - ./:/home/gradle/project:cached
